@@ -1,0 +1,8 @@
+app.name 			= customapp1
+app.nameuppper 		= Customapp1
+app.displayname 	= Custom App1
+app.version 			= 1.0.0
+app.createdate 		= Nov 2014
+app.description 	= this app will work on restrict the url of joombah component according to plan suscbribed
+app.author     		= Mohit Agrawal
+app.authoremail		= mohit@readybytes.in

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<project name="App Builder" basedir="." default="build" description="script to build an custom app for payplans">
+
+	<target name="config" description="Load configuration file">
+		<property file="customapp.prop"  	override="false" />
+	</target>
+
+	<target name="build" description="create folder structure" depends="config">
+
+		<mkdir dir="${app.name}" />
+		<copy file="customapp/customapp.php" tofile="${app.name}/${app.name}.php" />
+		<copy file="customapp/customapp.xml" tofile="${app.name}/${app.name}.xml" />
+		<mkdir dir="${app.name}/${app.name}" />
+		<mkdir dir="${app.name}/${app.name}/app" />
+		<mkdir dir="${app.name}/${app.name}/app/${app.name}" />
+		<copy file="customapp/customapp/app/customapp/customapp.php" tofile="${app.name}/${app.name}/app/${app.name}/${app.name}.php" />
+		<copy file="customapp/customapp/app/customapp/customapp.xml" tofile="${app.name}/${app.name}/app/${app.name}/${app.name}.xml" />
+
+		<!-- Apply the version change to all files. -->
+		<reflexive>
+			<fileset dir="${app.name}">
+			     <include name="**/*.*" />
+			</fileset>
+			 <filterchain>
+				<replacetokens>
+				    <token key="app.name" 				value="${app.name}" />
+				    <token key="app.nameuppper" 		value="${app.nameuppper}" />
+				    <token key="app.version" 			value="${app.version}" />
+				    <token key="app.createdate" 		value="${app.createdate}" />
+				    <token key="app.description" 		value="${app.description}" />
+				    <token key="app.author" 			value="${app.author}" />
+				    <token key="app.authoremail" 		value="${app.authoremail}" />
+				    <token key="app.displayname" 		value="${app.displayname}" />
+
+				</replacetokens>
+			</filterchain>
+		</reflexive>
+
+		<zip destfile="${app.name}/${app.name}.zip" >
+	       <fileset dir="${app.name}"></fileset>
+		</zip>
+
+	</target>
+
+
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<name>@app.displayname@</name>
+	<author>@app.author@</author>
+	<authorEmail>@app.authoremail@</authorEmail>
+	<authorUrl>http://www.readybytes.net/payplans.html</authorUrl>
+	<copyright>2009-14 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+    <description>
+    	<![CDATA[ 
+    		@app.description@
+    	]]>
+    </description>
+	<icon>@app.name@.png</icon>
+    <tags>@app.nameuppper@</tags>
+	<help>
+	
+	</help>
+	<fields name ="app_params">
+	<fieldset name ="app_params">
+			
+	</fieldset>
+	</fields>
+
+<alias>pp-@app.name@</alias>
+<documentation></documentation>
+<version>@app.version@</version>
+</config>
+
