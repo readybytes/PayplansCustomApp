@@ -20,7 +20,7 @@ class PayplansApp@app.nameuppper@ extends PayplansApp
 	protected $_location	= __FILE__;
 
 	public function isApplicable($refObject = null, $eventName='') {
-			return parent::isApplicable($subscription, $eventName);
+			return parent::isApplicable($refObject, $eventName);
 	}
 }
  
